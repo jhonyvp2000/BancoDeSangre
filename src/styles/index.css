@@ -6,18 +6,23 @@
   --bg-secondary: #F8FAFC;
   --bg-card: rgba(255, 255, 255, 0.85);
 
-  --text-primary: #0F172A;
-  --text-secondary: #475569;
+  --text-primary: #2A3B52;
+  /* Azul naval grisáceo, mucho más suave y formal que el negro/slate900 */
+  --text-secondary: #5A6E85;
+  /* Gris frío calmante */
   --text-inverse: #FFFFFF;
 
-  --border-light: rgba(15, 23, 42, 0.08);
+  --border-light: rgba(42, 59, 82, 0.08);
 
-  /* Brand Accents - Vibrant & Empathic red */
-  --accent-red-light: #FF6B6B;
-  --accent-red: #FA3E3E;
-  --accent-red-dark: #D42626;
-  --accent-red-glow: rgba(250, 62, 62, 0.25);
-  --accent-red-superglow: rgba(250, 62, 62, 0.4);
+  /* Brand Accents - Soft Rose/Crimson instead of Emergency Red */
+  --accent-red-light: #FFE4E6;
+  /* Fondo rosa suave */
+  --accent-red: #E11D48;
+  /* Rose 600 - Rojo amor/cuidado, no alarma */
+  --accent-red-dark: #BE123C;
+  /* Rose 700 */
+  --accent-red-glow: rgba(225, 29, 72, 0.15);
+  --accent-red-superglow: rgba(225, 29, 72, 0.30);
 
   /* Auxiliary colors */
   --accent-blue: #3E8BFA;
@@ -26,10 +31,10 @@
   --warning: #F59E0B;
 
   /* Utilities */
-  --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
-  --shadow-xl: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
-  --shadow-glass: 0 8px 32px 0 rgba(250, 62, 62, 0.1);
+  --shadow-sm: 0 2px 8px -2px rgba(42, 59, 82, 0.05);
+  --shadow-md: 0 10px 30px -5px rgba(42, 59, 82, 0.08);
+  --shadow-xl: 0 20px 40px -10px rgba(42, 59, 82, 0.12);
+  --shadow-glass: 0 8px 32px 0 rgba(225, 29, 72, 0.1);
   --blur-glass: blur(16px);
 
   --radius-sm: 8px;
@@ -63,7 +68,7 @@ body {
   overflow-x: hidden;
   /* sutil textura/gradiente en fondo */
   background-image:
-    radial-gradient(circle at 100% 0%, rgba(250, 62, 62, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(225, 29, 72, 0.03) 0%, transparent 40%),
     radial-gradient(circle at 0% 100%, rgba(62, 139, 250, 0.04) 0%, transparent 40%);
 }
 
