@@ -37,7 +37,7 @@ const PublicNavbar = () => {
                     </div>
                     <div className="logo-text-group">
                         <span className="logo-text">Banco de <span>Sangre</span></span>
-                        <span className="logo-subtext">Referencial</span>
+                        <span className="logo-subtext">OGESS Tarapoto</span>
                     </div>
                 </Link>
 
