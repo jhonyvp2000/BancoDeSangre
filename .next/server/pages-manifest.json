@@ -1,0 +1,9 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/_error": "pages/_error.js",
+  "/public/Home": "pages/public/Home.html",
+  "/public/ProcessTimeline": "pages/public/ProcessTimeline.html",
+  "/public/Requirements": "pages/public/Requirements.html",
+  "/404": "pages/404.html"
+}

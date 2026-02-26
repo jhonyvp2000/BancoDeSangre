@@ -1,5 +1,5 @@
 import { Heart, Instagram, Facebook, Twitter } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import './Footer.css';
 
 const Footer = () => {
@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="public-footer">
             <div className="container footer-content">
                 <div className="footer-brand">
-                    <Link to="/" className="brand-logo footer-logo">
+                    <Link href="/" className="brand-logo footer-logo">
                         <Heart className="logo-icon" fill="currentColor" size={24} />
                         <div className="logo-text-group">
                             <span className="logo-text">Banco de <span>Sangre</span></span>
@@ -27,18 +27,18 @@ const Footer = () => {
 
                 <div className="footer-links-group">
                     <h4>Donantes</h4>
-                    <Link to="/requirements">Requisitos Básicos</Link>
-                    <Link to="/process">El Proceso</Link>
-                    <Link to="/appointments">Agendar Cita</Link>
-                    <Link to="/locations">Ubicaciones</Link>
+                    <Link href="/requirements">Requisitos Básicos</Link>
+                    <Link href="/process">El Proceso</Link>
+                    <Link href="/appointments">Agendar Cita</Link>
+                    <Link href="/locations">Ubicaciones</Link>
                 </div>
 
                 <div className="footer-links-group">
                     <h4>Institucional</h4>
-                    <Link to="#">Sobre Nosotros</Link>
-                    <Link to="/campaigns">Campañas Móviles</Link>
-                    <Link to="#">Transparencia</Link>
-                    <Link to="#">Contacto</Link>
+                    <Link href="#">Sobre Nosotros</Link>
+                    <Link href="/campaigns">Campañas Móviles</Link>
+                    <Link href="#">Transparencia</Link>
+                    <Link href="#">Contacto</Link>
                 </div>
             </div>
 

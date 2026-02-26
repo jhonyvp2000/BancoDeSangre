@@ -1,5 +1,7 @@
+'use client';
+
 import { ArrowRight, HeartPulse, Sparkles, Activity } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import BloodBarometer from '../../components/ui/BloodBarometer';
 import Button from '../../components/ui/Button';
 import './Home.css';
@@ -28,7 +30,7 @@ const Home = () => {
                             <Button variant="primary" size="lg" icon={HeartPulse} className="hero-btn shadow-glow" onClick={() => window.location.href = '/requirements'}>
                                 Quiero Ser Donante
                             </Button>
-                            <Link to="/process" className="btn-text-link">
+                            <Link href="/process" className="btn-text-link">
                                 Conoce el proceso <ArrowRight size={18} />
                             </Link>
                         </div>
@@ -68,7 +70,7 @@ const Home = () => {
 
                     <div className="barometer-footer-action">
                         <p>¿No sabes tu tipo de sangre? <br /> <strong>No te preocupes, nosotros lo averiguamos por ti durante la donación.</strong></p>
-                        <Link to="/appointments" className="link-arrow">Ver Puntos de Donación <ArrowRight size={16} /></Link>
+                        <Link href="/appointments" className="link-arrow">Ver Puntos de Donación <ArrowRight size={16} /></Link>
                     </div>
                 </div>
             </section>

@@ -1,5 +1,8 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { Heart, ChevronDown, MapPin, CalendarHeart, ClipboardCheck, Info, ArrowRight } from 'lucide-react';
 import Button from '../ui/Button';
 import './PublicNavbar.css';
@@ -7,6 +10,8 @@ import './PublicNavbar.css';
 const PublicNavbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [megaMenuOpen, setMegaMenuOpen] = useState(false);
+    const pathname = usePathname();
+    const router = useRouter();
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -24,14 +29,14 @@ const PublicNavbar = () => {
     const handleMouseLeave = () => {
         timeoutId = setTimeout(() => {
             setMegaMenuOpen(false);
-        }, 150); // slight delay to prevent flickering
+        }, 150);
     };
 
     return (
         <header className={`public-nav ${scrolled ? 'nav-scrolled' : ''}`}>
             <div className="container nav-container">
                 {/* LOGO */}
-                <Link to="/" className="brand-logo">
+                <Link href="/" className="brand-logo">
                     <div className="logo-icon-wrapper">
                         <Heart className="logo-icon" fill="currentColor" size={24} />
                     </div>
@@ -43,9 +48,9 @@ const PublicNavbar = () => {
 
                 {/* ENLACES CENTRALES */}
                 <nav className="nav-links">
-                    <NavLink to="/" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+                    <Link href="/" className={`nav-item ${pathname === '/' ? 'active' : ''}`}>
                         Inicio
-                    </NavLink>
+                    </Link>
 
                     {/* MEGA MENU TRIGGER */}
                     <div
@@ -63,14 +68,14 @@ const PublicNavbar = () => {
                                 {/* Columna 1 */}
                                 <div className="mega-column">
                                     <h3 className="mega-title">Empieza Aquí</h3>
-                                    <Link to="/requirements" className="mega-link">
+                                    <Link href="/requirements" className="mega-link">
                                         <div className="mega-icon-box bg-red"><ClipboardCheck size={20} /></div>
                                         <div className="mega-link-text">
                                             <h4>Requisitos para donar</h4>
                                             <p>Descubre qué necesitas y quiénes pueden donar hoy.</p>
                                         </div>
                                     </Link>
-                                    <Link to="/process" className="mega-link">
+                                    <Link href="/process" className="mega-link">
                                         <div className="mega-icon-box bg-blue"><Info size={20} /></div>
                                         <div className="mega-link-text">
                                             <h4>El proceso paso a paso</h4>
@@ -82,14 +87,14 @@ const PublicNavbar = () => {
                                 {/* Columna 2 */}
                                 <div className="mega-column">
                                     <h3 className="mega-title">Acción inmediata</h3>
-                                    <Link to="/appointments" className="mega-link">
+                                    <Link href="/appointments" className="mega-link">
                                         <div className="mega-icon-box bg-yellow"><CalendarHeart size={20} /></div>
                                         <div className="mega-link-text">
                                             <h4>Reserva tu cita</h4>
                                             <p>Ahorra tiempo programando tu visita online.</p>
                                         </div>
                                     </Link>
-                                    <Link to="/locations" className="mega-link">
+                                    <Link href="/locations" className="mega-link">
                                         <div className="mega-icon-box bg-green"><MapPin size={20} /></div>
                                         <div className="mega-link-text">
                                             <h4>Puntos de donación</h4>
@@ -104,7 +109,7 @@ const PublicNavbar = () => {
                                         <span className="urgency-badge">Alerta de Stock</span>
                                         <h4>Necesitamos sangre O-</h4>
                                         <p>Las reservas del grupo universal están críticas. Si eres O-, te necesitamos urgentemente.</p>
-                                        <Link to="/appointments" className="text-link">Agendar ahora <ArrowRight size={14} /></Link>
+                                        <Link href="/appointments" className="text-link">Agendar ahora <ArrowRight size={14} /></Link>
                                     </div>
                                 </div>
 
@@ -113,15 +118,15 @@ const PublicNavbar = () => {
                         {/* FIN MEGA MENU */}
                     </div>
 
-                    <NavLink to="/campaigns" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+                    <Link href="/campaigns" className={`nav-item ${pathname === '/campaigns' ? 'active' : ''}`}>
                         Campañas
-                    </NavLink>
+                    </Link>
                 </nav>
 
                 {/* ACCIONES */}
                 <div className="nav-actions">
                     <span className="contact-phone">📞 (042) 52-2020</span>
-                    <Button variant="primary" icon={CalendarHeart} onClick={() => window.location.href = '/appointments'}>
+                    <Button variant="primary" icon={CalendarHeart} onClick={() => router.push('/appointments')}>
                         Agendar Cita
                     </Button>
                 </div>
