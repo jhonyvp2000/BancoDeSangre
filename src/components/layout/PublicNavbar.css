@@ -289,3 +289,136 @@
     color: var(--text-secondary);
     font-size: 0.95rem;
 }
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    color: var(--text-primary);
+}
+
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+/* --------------- RESPONSIVE DESIGN --------------- */
+
+@media (max-width: 1024px) {
+    .nav-actions .contact-phone {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-menu-wrapper {
+        position: fixed;
+        top: var(--nav-height);
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - var(--nav-height));
+        background: var(--bg-main);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 2rem;
+        transition: left var(--transition-normal);
+        overflow-y: auto;
+    }
+
+    .nav-menu-wrapper.open {
+        left: 0;
+    }
+
+    .public-nav.nav-scrolled .nav-menu-wrapper {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .nav-item {
+        height: auto;
+        font-size: 1.1rem;
+        width: 100%;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-item::after {
+        display: none;
+        /* Quitamos el line indicator the hover en movil */
+    }
+
+    .mega-menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+
+    .mega-menu.show {
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .mega-menu-content {
+        grid-template-columns: 1fr;
+        padding: 0;
+        gap: 1.5rem;
+    }
+
+    .highlight-col {
+        margin: 0;
+        padding: 0;
+        background: transparent;
+    }
+
+    .nav-actions {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .nav-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .logo-text {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-icon-wrapper {
+        padding: 0.35rem;
+    }
+
+    .logo-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
