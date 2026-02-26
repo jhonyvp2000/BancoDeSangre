@@ -38,7 +38,7 @@ const Home = () => {
                         {/* Imagen o ilustración sugerente del tema + Glass Card */}
                         <div className="image-wrapper">
                             <img
-                                src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?q=80&w=800&auto=format&fit=crop"
+                                src="/banco-de-sangre.webp"
                                 alt="Voluntaria donando sangre sonriente"
                                 className="hero-image"
                             />
