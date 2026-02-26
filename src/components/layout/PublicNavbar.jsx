@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Heart, ChevronDown, MapPin, CalendarHeart, ClipboardCheck, Info, ArrowRight, Menu, X } from 'lucide-react';
+import { Heart, ChevronDown, MapPin, CalendarHeart, ClipboardCheck, Info, ArrowRight, Menu, X, HeartPulse, Building2, ShieldCheck } from 'lucide-react';
 import Button from '../ui/Button';
 import './PublicNavbar.css';
 
@@ -70,7 +70,7 @@ const PublicNavbar = () => {
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
                         >
-                            <span>Quiero Donar</span>
+                            <span>Menú Principal</span>
                             <ChevronDown size={14} className={`dropdown-icon ${megaMenuOpen ? 'rotated' : ''}`} />
 
                             {/* MEGA MENU PANEL */}
@@ -79,60 +79,72 @@ const PublicNavbar = () => {
 
                                     {/* Columna 1 */}
                                     <div className="mega-column">
-                                        <h3 className="mega-title">Empieza Aquí</h3>
-                                        <Link href="/requirements" className="mega-link">
+                                        <h3 className="mega-title">Donación de Sangre</h3>
+                                        <Link href="/requirements" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
                                             <div className="mega-icon-box bg-red"><ClipboardCheck size={20} /></div>
                                             <div className="mega-link-text">
-                                                <h4>Requisitos para donar</h4>
-                                                <p>Descubre qué necesitas y quiénes pueden donar hoy.</p>
+                                                <h4>Requisitos</h4>
+                                                <p>Descubre qué necesitas para donar.</p>
                                             </div>
                                         </Link>
-                                        <Link href="/process" className="mega-link">
+                                        <Link href="/process" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
                                             <div className="mega-icon-box bg-blue"><Info size={20} /></div>
                                             <div className="mega-link-text">
-                                                <h4>El proceso paso a paso</h4>
-                                                <p>Conoce qué sucederá desde tu llegada hasta tu descanso.</p>
+                                                <h4>El Proceso</h4>
+                                                <p>Conoce los pasos de la donación.</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="/campaigns" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
+                                            <div className="mega-icon-box bg-yellow"><HeartPulse size={20} /></div>
+                                            <div className="mega-link-text">
+                                                <h4>Campañas</h4>
+                                                <p>Únete a nuestras colectas móviles.</p>
                                             </div>
                                         </Link>
                                     </div>
 
                                     {/* Columna 2 */}
                                     <div className="mega-column">
-                                        <h3 className="mega-title">Acción inmediata</h3>
-                                        <Link href="/appointments" className="mega-link">
-                                            <div className="mega-icon-box bg-yellow"><CalendarHeart size={20} /></div>
+                                        <h3 className="mega-title">Atención al Usuario</h3>
+                                        <Link href="/appointments" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
+                                            <div className="mega-icon-box bg-green"><CalendarHeart size={20} /></div>
                                             <div className="mega-link-text">
-                                                <h4>Reserva tu cita</h4>
-                                                <p>Ahorra tiempo programando tu visita online.</p>
+                                                <h4>Reservar Cita</h4>
+                                                <p>Programa tu donación sin colas.</p>
                                             </div>
                                         </Link>
-                                        <Link href="/locations" className="mega-link">
-                                            <div className="mega-icon-box bg-green"><MapPin size={20} /></div>
+                                        <Link href="/locations" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
+                                            <div className="mega-icon-box bg-red"><MapPin size={20} /></div>
                                             <div className="mega-link-text">
-                                                <h4>Puntos de donación</h4>
-                                                <p>Encuentra el banco de sangre o unidad móvil más cercana.</p>
+                                                <h4>Ubicaciones</h4>
+                                                <p>Encuentra tu banco de sangre más cercano.</p>
                                             </div>
                                         </Link>
                                     </div>
 
-                                    {/* Columna 3 (Destacado) */}
-                                    <div className="mega-column highlight-col">
-                                        <div className="urgency-card">
-                                            <span className="urgency-badge">Alerta de Stock</span>
-                                            <h4>Necesitamos sangre O-</h4>
-                                            <p>Las reservas del grupo universal están críticas. Si eres O-, te necesitamos urgentemente.</p>
-                                            <Link href="/appointments" className="text-link">Agendar ahora <ArrowRight size={14} /></Link>
-                                        </div>
+                                    {/* Columna 3 */}
+                                    <div className="mega-column">
+                                        <h3 className="mega-title">Institucional</h3>
+                                        <Link href="#" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
+                                            <div className="mega-icon-box bg-blue"><Building2 size={20} /></div>
+                                            <div className="mega-link-text">
+                                                <h4>Sobre Nosotros</h4>
+                                                <p>Conoce la OGESS Tarapoto.</p>
+                                            </div>
+                                        </Link>
+                                        <Link href="#" className="mega-link" onClick={() => setMobileMenuOpen(false)}>
+                                            <div className="mega-icon-box bg-yellow"><ShieldCheck size={20} /></div>
+                                            <div className="mega-link-text">
+                                                <h4>Transparencia</h4>
+                                                <p>Gestión y resultados públicos.</p>
+                                            </div>
+                                        </Link>
                                     </div>
 
                                 </div>
                             </div>
                             {/* FIN MEGA MENU */}
                         </div>
-
-                        <Link href="/campaigns" className={`nav-item ${pathname === '/campaigns' ? 'active' : ''}`}>
-                            Campañas
-                        </Link>
                     </nav>
 
                     <div className="nav-actions">
