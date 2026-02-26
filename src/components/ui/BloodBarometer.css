@@ -1,0 +1,184 @@
+.barometer-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.barometer-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.barometer-header h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.barometer-header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.barometer-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 1rem;
+    align-items: end;
+    height: 250px;
+}
+
+.blood-tube-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    height: 100%;
+}
+
+.tube-label {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+}
+
+.blood-tube {
+    width: 40px;
+    height: 100%;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    border: 2px solid rgba(15, 23, 42, 0.05);
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Brillo efecto cristal para el tubo */
+.blood-tube::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 5px;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.blood-fill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    transition: height 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+/* Colores de estado con gradientes premium */
+.blood-fill.stable {
+    background: linear-gradient(to top, var(--success), #34D399);
+}
+
+.blood-fill.low {
+    background: linear-gradient(to top, var(--warning), #FCD34D);
+}
+
+.blood-fill.critical {
+    background: linear-gradient(to top, var(--accent-red-dark), var(--accent-red-light));
+    box-shadow: 0 -5px 15px var(--accent-red-glow);
+    animation: pulseCritical 2s infinite;
+}
+
+@keyframes pulseCritical {
+    0% {
+        opacity: 0.8;
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow: 0 -5px 25px var(--accent-red-superglow);
+    }
+
+    100% {
+        opacity: 0.8;
+    }
+}
+
+/* Efecto visual de burbujas ascendentes */
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    bottom: -10px;
+    animation: floatUp 3s infinite linear;
+}
+
+.b1 {
+    left: 20%;
+    width: 6px;
+    height: 6px;
+    animation-duration: 2.5s;
+}
+
+.b2 {
+    left: 60%;
+    width: 4px;
+    height: 4px;
+    animation-duration: 3.2s;
+    animation-delay: 1s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150px);
+        opacity: 0;
+    }
+}
+
+.tube-status {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.text-critical {
+    color: var(--accent-red);
+}
+
+.text-low {
+    color: var(--warning);
+}
+
+.text-stable {
+    color: var(--success);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .barometer-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        height: auto;
+    }
+
+    .blood-tube {
+        height: 120px;
+    }
+}

@@ -1,0 +1,70 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Tamaños */
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+    border-radius: var(--radius-sm);
+}
+
+.btn-md {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+}
+
+.btn-lg {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.125rem;
+}
+
+/* Variantes */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-red), var(--accent-red-dark));
+    color: white;
+    box-shadow: 0 4px 15px var(--accent-red-glow);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-red-light), var(--accent-red));
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: hsla(215, 20%, 65%, 0.1);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: hsla(215, 20%, 65%, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent-red);
+    border: 1px solid var(--accent-red);
+}
+
+.btn-outline:hover {
+    background: var(--accent-red-glow);
+}
+
+.btn-icon {
+    flex-shrink: 0;
+}
