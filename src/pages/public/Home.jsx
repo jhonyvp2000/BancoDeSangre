@@ -1,7 +1,7 @@
 import { ArrowRight, HeartPulse, Sparkles, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import BloodBarometer from '../components/ui/BloodBarometer';
-import Button from '../components/ui/Button';
+import BloodBarometer from '../../components/ui/BloodBarometer';
+import Button from '../../components/ui/Button';
 import './Home.css';
 
 const Home = () => {

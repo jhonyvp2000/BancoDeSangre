@@ -8,13 +8,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/" element={<Navigate to="/home" replace />} />
 
-        <Route element={<MainLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/donors" element={<Donors />} />
-          <Route path="/inventory" element={<Inventory />} />
-          <Route path="/reports" element={<div style={{ padding: '2rem' }}>Reportes (En construcción)</div>} />
+        <Route element={<PublicLayout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/requirements" element={<Requirements />} />
+          <Route path="/process" element={<ProcessTimeline />} />
+          <Route path="/appointments" element={<div style={{ padding: '5rem', textAlign: 'center' }}><h2>Agendar Citas (Pronto)</h2></div>} />
+          <Route path="/locations" element={<div style={{ padding: '5rem', textAlign: 'center' }}><h2>Ubicaciones (Pronto)</h2></div>} />
+          <Route path="/campaigns" element={<div style={{ padding: '5rem', textAlign: 'center' }}><h2>Campañas (Pronto)</h2></div>} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { CheckCircle2, XCircle, AlertCircle, RefreshCw } from 'lucide-react';
-import Button from '../components/ui/Button';
+import Button from '../../components/ui/Button';
 import './Requirements.css';
 
 const Requirements = () => {
