@@ -35,7 +35,10 @@ const PublicNavbar = () => {
                     <div className="logo-icon-wrapper">
                         <Heart className="logo-icon" fill="currentColor" size={24} />
                     </div>
-                    <span className="logo-text">Regala<span>Vida</span></span>
+                    <div className="logo-text-group">
+                        <span className="logo-text">Banco de <span>Sangre</span></span>
+                        <span className="logo-subtext">Referencial</span>
+                    </div>
                 </Link>
 
                 {/* ENLACES CENTRALES */}

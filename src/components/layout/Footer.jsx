@@ -9,7 +9,10 @@ const Footer = () => {
                 <div className="footer-brand">
                     <Link to="/" className="brand-logo footer-logo">
                         <Heart className="logo-icon" fill="currentColor" size={24} />
-                        <span className="logo-text">Regala<span>Vida</span></span>
+                        <div className="logo-text-group">
+                            <span className="logo-text">Banco de <span>Sangre</span></span>
+                            <span className="logo-subtext">Referencial</span>
+                        </div>
                     </Link>
                     <p className="footer-desc">
                         Conectando héroes anónimos con personas que los necesitan.

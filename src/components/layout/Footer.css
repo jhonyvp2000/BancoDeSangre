@@ -14,6 +14,11 @@
 
 .footer-logo {
     margin-bottom: 1.5rem;
+    align-items: flex-start;
+}
+
+.footer-logo .logo-subtext {
+    color: var(--text-secondary);
 }
 
 .footer-desc {
