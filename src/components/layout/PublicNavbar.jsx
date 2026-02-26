@@ -69,6 +69,11 @@ const PublicNavbar = () => {
                             className="nav-item has-dropdown"
                             onMouseEnter={handleMouseEnter}
                             onMouseLeave={handleMouseLeave}
+                            onClick={() => {
+                                if (window.innerWidth <= 992) {
+                                    setMegaMenuOpen(!megaMenuOpen);
+                                }
+                            }}
                         >
                             <span>Menú Principal</span>
                             <ChevronDown size={14} className={`dropdown-icon ${megaMenuOpen ? 'rotated' : ''}`} />
